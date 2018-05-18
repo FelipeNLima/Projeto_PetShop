@@ -9,11 +9,12 @@ Class Conexao
     private static $pdo;
     public function __construct()
     {
-        $this->servidor = "localhost:8080";
+        $this->servidor = "localhost";
         $this->banco = "BD_PetShop";
         $this->usuario = "root";
         $this->senha = "";
     }
+
     public function Conectar()
     {
         try{

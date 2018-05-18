@@ -5,7 +5,7 @@
     <hr />
 </div>
 
-<form action="../../Controller/Cliente_Controller" method="POST">
+<form action="../../Controller/Cliente_Controller.php" method="POST">
     <div class="row">
         <div class="col-md-8 offset-md-2">
             <div class="form-group">
@@ -51,7 +51,6 @@
                         <label>Celular:</label>
                         <input type="text" class="form-control" required name="celular" id="celular"/>
                     </div>
-
                     <div class="col-md-12">
                         <label>E-mail:</label>
                         <input type="email" class="form-control" required name="email" id="email"/>
@@ -61,7 +60,7 @@
                         <input type="submit" value="Gravar" class="btn btn-primary" name="btcadastrar"/>
                     </div>
                     <div class="col-md-2 ">
-                        <a href="PrincipalCliente.php" class="btn btn-danger preeche">Cancelar</a>
+                        <a href="PrincipalCliente.php" class="btn btn-danger">Cancelar</a>
                     </div>
                 </div>
             </div>
