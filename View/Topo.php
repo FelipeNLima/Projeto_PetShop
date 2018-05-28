@@ -18,7 +18,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav ml-auto">
                   <li class="nav-item">
-                    <a class="nav-link active" href="Cliente/PrincipalCliente.php">
+                    <a class="nav-link active" href="http://localhost:8080/Projeto_PetShop/Projeto_PetShop/View/Cliente/PrincipalCliente.php">
                     <i class="fas fa-users" style="margin-right: 5px;"></i>
                         Clientes
                     </a>

@@ -5,7 +5,7 @@
     <hr />
 </div>
 
-<form action="../../Controller/Cliente_Controller.php" method="POST">
+<form action="..\..\Controller\Cliente_Controller.php" method="POST">
     <div class="row">
         <div class="col-md-8 offset-md-2">
             <div class="form-group">

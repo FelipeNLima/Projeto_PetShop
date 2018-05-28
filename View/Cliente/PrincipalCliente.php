@@ -1,5 +1,10 @@
-<?php include_once("..\Topo.php"); ?>
+<?php 
+    include '../Topo.php'; 
+    require_once '../../Model/ClienteModel.php';
+    $objCliente = new Cliente();
+?>
 
+    
     <div style="margin-top: 50px !important;">
         <form action="" method="POST">
             
@@ -34,24 +39,22 @@
                                 <th scope="col" width="120px">E-mail</th>
                             </tr>
                         </thead>
-                        <!-- <tbody>
-                            <?php foreach($resultado as $item){ ?>
+                        <tbody>
+                            <?php foreach($objCliente->CarregarCliente() as $item){ ?>
                                 <tr>
-                                    <td><?php echo $item->nome;?></td> 
-                                    <td><?php echo $item->cpf;?></td>
-                                    <td><?php echo $item->celular;?></td>
-                                    <td><?php echo $item->telefone;?></td>
-                                    <td class="text-center">
-                                        <a href="">
-                                            <i class="fas fa-edit icone" style="margin-right: 30px"></i>
-                                        </a>
-                                        <a href="">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
-                                    </td>
+                                    <td><?=$item['Nome_cliente']?></td> 
+                                    <td><?=$item['CPF']?></td> 
+                                    <td><?=$item['Endereco']?></td> 
+                                    <td><?=$item['Numero']?></td> 
+                                    <td><?=$item['Cidade']?></td> 
+                                    <td><?=$item['Estado']?></td> 
+                                    <td><?=$item['CEP']?></td> 
+                                    <td><?=$item['Telefone']?></td> 
+                                    <td><?=$item['Celular']?></td> 
+                                    <td><?=$item['Email']?></td>
                                 </tr>
                             <?php }?>
-                        </tbody> -->
+                        </tbody>
                     </table>
                     <a href="#" class ="btn btn-Warning Editar">
                     <i class="fas fa-pencil-alt" style="margin-right: 5px;"></i>

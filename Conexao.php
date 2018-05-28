@@ -1,33 +1,33 @@
 <?php
-Class Conexao
+class Conexao 
 {
-    
-    private $usuario;
-    private $senha;
-    private $banco;
-    private $servidor;
-    private static $pdo;
-    public function __construct()
-    {
-        $this->servidor = "localhost";
-        $this->banco = "BD_PetShop";
-        $this->usuario = "root";
-        $this->senha = "";
-    }
-
-    public function Conectar()
-    {
-        try{
-            if(is_null(self::$pdo))
-            {
-                self::$pdo = new PDO("mysql:host=".$this->servidor.";dbname=".$this->banco, $this->usuario, $this->senha);         
-            }
-            return self::$pdo;
-        }
-        catch(PDOException $ex)
+	private static $dbName = 'bd_petshop'; 
+	private static $dbHost = 'localhost';
+    private static $dbUsername = 'root';
+    private static $dbUserPassword = '';
+    private static $charset = 'utf8';
+	
+	private static $cont  = null;
+	
+	public static function conectar()
+	{
+       if ( null == self::$cont )
+       {      
+        try 
         {
-            echo "Erro: ".$ex->getMessage(); 
+          self::$cont =  new PDO( "mysql:host=".self::$dbHost.";"."dbname=".self::$dbName.";"."charset=".self::$charset.";", self::$dbUsername, self::$dbUserPassword);  
         }
-    }
-}  
+        catch(PDOException $e) 
+        {
+          die($e->getMessage());  
+        }
+       } 
+       return self::$cont;
+	}
+	
+	public static function disconectar()
+	{
+		self::$cont = null;
+	}
+}
 ?>
