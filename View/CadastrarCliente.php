@@ -1,11 +1,11 @@
-<?php include_once("..\Topo.php"); ?>
+<?php include_once("Topo.php"); ?>
 
 <div class="offset-md-1 col-md-10" style="margin-top: 30px !important">
     <h3>Novo Cliente</h3>
     <hr />
 </div>
 
-<form action="..\..\Controller\Cliente_Controller.php" method="POST">
+<form action="..\Controller\Cliente_Controller.php" method="POST">
     <div class="row">
         <div class="col-md-8 offset-md-2">
             <div class="form-group">
@@ -68,4 +68,4 @@
     </div>
 </form>
 
-<?php include_once("..\Fim.php"); ?>
+<?php include_once("Fim.php"); ?>

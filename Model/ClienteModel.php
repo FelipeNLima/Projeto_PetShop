@@ -1,6 +1,6 @@
 <?php 
 
-require_once '../Conexao.php';
+include '../Conexao.php';
 
 class Cliente
 {
@@ -19,21 +19,7 @@ class Cliente
     private $Email;
     private $conexao;
     
-    
-
-    public function __construct() {
-        $this->conexao = new Conexao(); 
-        
-    }
-    
-    public function __set($atributo, $valor) {
-        $this->$atributo = $valor;
-    }
-    
-    public function __get($atributo) {
-        return $this->$atributo;
-    }
-    
+   
     public function CadastrarCliente($dados)
     {
         try
@@ -88,8 +74,13 @@ class Cliente
     public function CarregarCliente()
     {
         try{
-            $query = $this->conexao->conectar()->prepare("SELECT id_cliente, Nome_cliente, Bairro, Endereco, Numero, Cidade, Estado, CEP, CPF, Telefone, Celular, Email FROM cliente");
+            $pdo = Conexao::conectar();
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = ("SELECT Nome_cliente, Bairro, Endereco, Numero, Cidade, Estado, CEP, CPF, Telefone, Celular, Email FROM cliente");
+            $query = $pdo->prepare($sql);
             $query->execute();
+
             return $query->fetchAll();
         } catch (PDOException $ex) {
             return 'error' .$ex->getMessage();

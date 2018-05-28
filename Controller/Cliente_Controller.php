@@ -10,7 +10,7 @@ if(isset($_POST['btcadastrar']))
 {   
     if($objCliente->CadastrarCliente($_POST) === 'ok')
     {
-        header("location: ..\View\Cliente\PrincipalCliente.php");
+        header("location: ..\View\PrincipalCliente.php");
     }
     else
     {

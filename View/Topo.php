@@ -18,26 +18,26 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav ml-auto">
                   <li class="nav-item">
-                    <a class="nav-link active" href="http://localhost:8080/Projeto_PetShop/Projeto_PetShop/View/Cliente/PrincipalCliente.php">
+                    <a class="nav-link active" href="PrincipalCliente.php">
                     <i class="fas fa-users" style="margin-right: 5px;"></i>
                         Clientes
                     </a>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href=""> 
+                    <a class="nav-link active" href="PrincipalAnimal.php"> 
                     <i class="fas fa-paw" style="margin-right: 5px;"></i>
                         Animais
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="">
+                    <a class="nav-link active" href="PrincipalServico.php">
                     <i class="fas fa-shopping-basket" style="margin-right: 5px;"></i>
                         Serviços  
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="">
+                    <a class="nav-link active" href="PrincipalVenda.php">
                     <i class="fas fa-money-bill-alt" style="margin-right: 5px;"></i>
                         Venda
                     </a>

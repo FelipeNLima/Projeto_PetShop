@@ -1,6 +1,6 @@
 <?php 
-    include '../Topo.php'; 
-    require_once '../../Model/ClienteModel.php';
+    include 'Topo.php'; 
+    require_once '../Model/ClienteModel.php';
     $objCliente = new Cliente();
 ?>
     
@@ -28,7 +28,6 @@
                                 <th scope="col">Nome</th>
                                 <th scope="col">CPF</th>
                                 <th scope="col" width="120px">Endereço</th>
-                                <th scope="col" width="120px">Bairro</th>
                                 <th scope="col" width="120px">Numero</th>
                                 <th scope="col" width="120px">Cidade</th>
                                 <th scope="col" width="120px">Estado</th>
@@ -70,4 +69,4 @@
     </div>
 
 
-<?php include_once("..\Fim.php"); ?>
+<?php include_once("Fim.php"); ?>
