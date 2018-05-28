@@ -3,7 +3,6 @@
     require_once '../../Model/ClienteModel.php';
     $objCliente = new Cliente();
 ?>
-
     
     <div style="margin-top: 50px !important;">
         <form action="" method="POST">
