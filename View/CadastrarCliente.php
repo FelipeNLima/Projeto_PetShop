@@ -57,10 +57,10 @@
                     </div>
 
                     <div class="col-md-2">
-                        <input type="submit" value="Gravar" class="btn btn-primary" name="btcadastrar"/>
+                        <input type="submit" value="Gravar" class="btn btn-primary" name="btcadastrar" style="margin-top: 20px;"/>
                     </div>
                     <div class="col-md-2 ">
-                        <a href="PrincipalCliente.php" class="btn btn-danger">Cancelar</a>
+                        <a href="PrincipalCliente.php" class="btn btn-danger" style="margin-top: 20px;" >Cancelar</a>
                     </div>
                 </div>
             </div>
