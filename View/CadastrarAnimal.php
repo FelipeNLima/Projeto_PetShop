@@ -30,7 +30,7 @@
                     </div>
                     <div class="col-md-4">
                         <label>Data de Nascimento:</label>
-                        <input type="numeric" class="form-control" required name="data" id="data"/>
+                        <input type="text" class="form-control" required name="data" id="data"/>
                     </div>
                     <div class="col-md-4">
                         <label>Sexo:</label>
@@ -38,10 +38,9 @@
                     </div>
                     <div class="col-md-8">
                         <label>Dono:</label>
-                        <select name="dono" class="form-control">
+                        <select name="dono" id="dono" class="form-control">
                             <?php foreach($objCliente->CarregarCliente() as $rst) { ?>
-                                <option style="display:none"><?=$rst['id_cliente']?></option>
-                                <option><?=$rst['Nome_cliente']?></option>
+                                <option value="<?=$rst['id_cliente']?>"><?=$rst['Nome_cliente']?></option>
                             <?php } ?>
                         </select>
                     </div>

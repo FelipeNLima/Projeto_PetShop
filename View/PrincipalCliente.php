@@ -1,16 +1,18 @@
 <?php 
     include 'Topo.php'; 
     include 'AtualizarCliente.php'; 
-    include 'DeletarCliente.php'; 
+    include 'DeletarCliente.php';
     require_once '../Model/ClienteModel.php';
     $objCliente = new Cliente();
+
+    $pesquisa = isset($_POST["pesquisa"]) ? $_POST["pesquisa"] : "";
 ?>
 <html>
 <head><script language="JavaScript" src="../JavaScript/ClienteModal.js"></script></head>
     <div style="margin-top: 50px !important;">          
             <div class="row">
                 <div class="col-md-6">
-                <form action="../Controllers/Garcom_Controller.php" method="post">
+                <form action="../Controller/Cliente_Controller" method="post">
                     <input type="text" class="form-control" name="pesquisa" id="pesquisa" placeholder="Pesquisar" value="<?php echo $pesquisa; ?>" style="margin-left: -62px;" />                                 
                 </form>
                 </div>

@@ -32,14 +32,14 @@
                                 <th scope="col" width="120px">Nome</th>
                                 <th scope="col" width="120px">Raça</th>
                                 <th scope="col" width="120px">Especie</th>
-                                <th scope="col" width="120px">Data de Nascimento</th>
+                                <th scope="col" width="200px">Data de Nascimento</th>
                                 <th scope="col" width="120px">Sexo</th>
-                                <th scope="col" width="120px">Dono</th>
+                                <th scope="col" width="200px">Dono</th>
                                 <th scope="col" width="120px"></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach($objAnimal->CarregarAnimal() as $item){ ?>
+                            <?php foreach($objAnimal->CarregarAnimal() as $item ){ ?>
                                 <tr>
                                     <td style="display:none"><?=$item['id_animal']?></td> 
                                     <td><?=$item['Nome_animal']?></td> 
@@ -47,28 +47,26 @@
                                     <td><?=$item['especie']?></td> 
                                     <td><?=$item['Data_Nascimento']?></td>
                                     <td><?=$item['sexo']?></td>  
-                                    <td><?=$item['cliente.Nome_cliente']?></td> 
+                                    <td><?=$item['dono']?></td> 
+                                    
                                     <td>
-                                        <button class ="btn btn-sm btn-Warning Editar" onclick="ModalEditCliente()" data-toggle="modal" data-target="#AtualizarCliente"
-                                        data-whateverid="<?=$item['id_cliente']?>" 
-                                        data-whatever="<?=$item['Nome_cliente']?>"
-                                        data-whatever1="<?=$item['CPF']?>"
-                                        data-whatever2="<?=$item['Endereco']?>"
-                                        data-whatever3="<?=$item['Numero']?>"
-                                        data-whatever4="<?=$item['Bairro']?>"
-                                        data-whatever5="<?=$item['Cidade']?>"
-                                        data-whatever6="<?=$item['Estado']?>"
-                                        data-whatever7="<?=$item['CEP']?>"
-                                        data-whatever8="<?=$item['Telefone']?>"
-                                        data-whatever9="<?=$item['Celular']?>"
-                                        data-whatever10="<?=$item['Email']?>" 
+                                        <button class ="btn btn-sm btn-Warning Editar" onclick="ModalEditAnimal()" data-toggle="modal" data-target="#AtualizarAnimal"
+                                        data-whateverId="<?=$item['id_animal']?>" 
+                                        data-whatever0="<?=$item['Nome_animal']?>"
+                                        data-whatever11="<?=$item['Raca']?>"
+                                        data-whatever12="<?=$item['especie']?>"
+                                        data-whatever13="<?=$item['Data_Nascimento']?>"
+                                        data-whatever14="<?=$item['sexo']?>"
+                                        data-whatever15="<?=$item['dono']?>"
+ 
                                         style="margin-bottom:  8px;" >
                                             <i class="fas fa-pencil-alt" style="margin-right: 5px;"></i>
                                                 Editar
                                         </button>
 
-                                        <button class="btn btn-sm btn-danger Excluir" onclick="ModalDeletarCliente()" data-toggle="modal" data-target="#DeletarCliente" 
-                                        data-whateverid="<?=$item['id_cliente']?>" >                                   
+                                        <button class="btn btn-sm btn-danger Excluir" onclick="ModalDeletarAnimal()" data-toggle="modal" data-target="#DeletarAnimal" 
+                                                style="margin-bottom:  8px;"
+                                                data-whateverid="<?=$item['id_animal']?>" >                                   
                                             <i class="fas fa-times" style="margin-right: 5px;"></i>
                                                 Excluir
                                         </button> 

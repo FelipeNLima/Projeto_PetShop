@@ -1,4 +1,5 @@
 <?php
+
 class Conexao 
 {
 	private static $dbName = 'bd_petshop'; 
@@ -25,7 +26,7 @@ class Conexao
        return self::$cont;
 	}
 	
-	public static function disconectar()
+	public static function desconectar()
 	{
 		self::$cont = null;
 	}

@@ -1,6 +1,6 @@
 <?php 
-
-include '../Conexao.php';
+// include '../Conexao.php';
+require_once 'ClienteModel.php';
 
 class Animal
 {
@@ -18,19 +18,26 @@ class Animal
    
     public function CadastrarAnimal($dados)
     {
+
         try
         {
+            var_dump($dados);
+
+            
             $this->Nome_animal = $dados['nome'];
             $this->Raca = $dados['raca'];
             $this->especie = $dados['especie'];
-            $this->Data_Nascimento = (int) $dados['data'];
+            $this->Data_Nascimento = $dados['data'];
             $this->sexo = $dados['sexo'];
-            $this->id_cliente = $dados['id_cliente'];
-            
+            $this->id_cliente = $dados['dono'];
+
             $pdo = Conexao::conectar();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $sql = ("INSERT INTO animal (id_animal,Nome_animal,Raca,especie,Data_Nascimento,sexo,id_cliente)  VALUES (:NOME, :RACA, :ESPECIE, :DATA_NASCIMENTO, :SEXO, :IDCLIENTE)");
+            $sql = ("INSERT INTO animal 
+                        (Nome_animal,Raca,especie,Data_Nascimento,sexo, id_cliente)  
+                    VALUES 
+                        (:NOME, :RACA, :ESPECIE, :DATA_NASCIMENTO, :SEXO, :IDCLIENTE)");
             $query = $pdo->prepare($sql);
             $query->bindParam(":NOME", $this->Nome_animal, PDO::PARAM_STR);
             $query->bindParam(":RACA", $this->Raca, PDO::PARAM_STR);
@@ -39,6 +46,7 @@ class Animal
             $query->bindParam(":SEXO", $this->sexo, PDO::PARAM_STR);
             $query->bindParam(":IDCLIENTE", $this->id_cliente, PDO::PARAM_INT);
             
+
             if($query->execute())
             {
                 return 'ok';
@@ -59,18 +67,21 @@ class Animal
     public function AtualizarAnimal($dados)
     {
         try{
+            $this->id_animal = (int) $dados['id'];
             $this->Nome_animal = $dados['nome'];
             $this->Raca = $dados['raca'];
             $this->especie = $dados['especie'];
             $this->Data_Nascimento = (int) $dados['data'];
             $this->sexo = $dados['sexo'];
-            $this->id_cliente = $dados['id_cliente'];
+            $this->id_cliente = $dados['dono'];
             
 
             $pdo = Conexao::conectar();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $sql = ("UPDATE animal SET Nome_animal = :NOME, Raca=:RACA, especie=:ESPECIE, Data_Nascimento=:DATA_NASCIMENTO, sexo=:SEXO, id_cliente=:IDCLIENTE WHERE id_animal = :IDANIMAL");
+            $sql = ("UPDATE animal SET Nome_animal = :NOME, Raca=:RACA, especie=:ESPECIE, Data_Nascimento=:DATA_NASCIMENTO, sexo=:SEXO, id_cliente=:IDCLIENTE 
+                        WHERE id_animal = :IDANIMAL");
+
             $query = $pdo->prepare($sql);
             $query->bindParam(":IDANIMAL", $this->id_animal, PDO::PARAM_INT);
             $query->bindParam(":NOME", $this->Nome_animal, PDO::PARAM_STR);
@@ -120,7 +131,10 @@ class Animal
             $pdo = Conexao::conectar();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $sql = ("SELECT id_animal, Nome_animal, Raca, especie, Data_Nascimento, sexo, cliente.Nome_Cliente FROM animal INNER JOIN cliente ON animal.id_cliente = cliente.id_cliente GROUP BY cliente.Nome_Cliente");
+            $sql = ("   SELECT id_animal, Nome_animal, Raca, especie, Data_Nascimento, sexo, cliente.Nome_Cliente AS 'dono' 
+                        FROM animal 
+                        INNER JOIN cliente ON animal.id_cliente = cliente.id_cliente");
+
             $query = $pdo->prepare($sql);
             $query->execute();
 

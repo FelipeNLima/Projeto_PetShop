@@ -174,6 +174,25 @@ class Cliente
         }
     }
 
+    public function CarregarClientePorNome($dados)
+    {
+        try{
+            $this->Nome_cliente = $dados['dono'];
+            $pdo = Conexao::conectar();
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql=("SELECT id_cliente, Nome_cliente, Bairro, Endereco, Numero, Cidade, Estado, CEP, CPF, Telefone, Celular, Email FROM cliente WHERE Nome_cliente = :NOME");
+            $query = $pdo->prepare($sql);
+            $query->bindParam(":NOME", $this->Nome_cliente, PDO::PARAM_STR);
+            $query->execute();
+            return $query->fetchAll();
+            
+        } catch (PDOException $ex) {
+            return 'error' .$ex->getMessage();
+            
+        }
+    }
+
 
 }
 
