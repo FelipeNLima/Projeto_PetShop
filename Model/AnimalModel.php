@@ -1,6 +1,6 @@
 <?php 
 // include '../Conexao.php';
-require_once 'ClienteModel.php';
+require_once '../View/HomePage.php';
 
 class Animal
 {
@@ -21,9 +21,7 @@ class Animal
 
         try
         {
-            var_dump($dados);
 
-            
             $this->Nome_animal = $dados['nome'];
             $this->Raca = $dados['raca'];
             $this->especie = $dados['especie'];
@@ -80,7 +78,7 @@ class Animal
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $sql = ("UPDATE animal SET Nome_animal = :NOME, Raca=:RACA, especie=:ESPECIE, Data_Nascimento=:DATA_NASCIMENTO, sexo=:SEXO, id_cliente=:IDCLIENTE 
-                        WHERE id_animal = :IDANIMAL");
+                    WHERE id_animal = :IDANIMAL");
 
             $query = $pdo->prepare($sql);
             $query->bindParam(":IDANIMAL", $this->id_animal, PDO::PARAM_INT);

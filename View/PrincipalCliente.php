@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-md-6">
                 <form action="../Controller/Cliente_Controller" method="post">
-                    <input type="text" class="form-control" name="pesquisa" id="pesquisa" placeholder="Pesquisar" value="<?php echo $pesquisa; ?>" style="margin-left: -62px;" />                                 
+                    <input type="text" class="form-control" name="pesquisa" id="pesquisa" placeholder="Pesquisar" value="<?php echo $pesquisa; ?>" style="margin-left: 35px;" />                                 
                 </form>
                 </div>
                 <div class="offset-md-4 col-md-2">
@@ -27,7 +27,7 @@
             <div class="row espaco">
                 <div class="col-md-12" style="margin-top: 30px">
                     <div class="form-group">
-                    <table class="table table-hover" style="margin-left:-65px;">
+                    <table class="table table-hover" style="margin-left:2px;">
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col" width="120px">Nome</th>

@@ -18,7 +18,7 @@
                             <div class="col-md-12">
                                 <input type="hidden" class="form-control" name="id" id="id"/>
                                 <label>Nome:</label>
-                                <input type="text" class="form-control" name="nome" id="nome"/>
+                                <input type="text" class="form-control" required  name="nome" id="nome"/>
                             </div>
                             <div class="col-md-4">
                                 <label>CPF:</label>

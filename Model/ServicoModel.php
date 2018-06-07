@@ -1,6 +1,5 @@
 <?php 
-
-include '../Conexao.php';
+require_once '../View/HomePage.php';
 
 class Servico
 {

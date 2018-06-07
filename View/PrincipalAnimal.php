@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-md-6">
                 <form action="../Controllers/Animal_Controller.php" method="post">
-                    <input type="text" class="form-control" name="pesquisa" id="pesquisa" placeholder="Pesquisar" value="<?php echo $pesquisa; ?>" style="margin-left: -62px;" />                                 
+                    <input type="text" class="form-control" name="pesquisa" id="pesquisa" placeholder="Pesquisar" value="<?php echo $pesquisa; ?>" style="margin-left: 130px;" />                                 
                 </form>
                 </div>
                 <div class="offset-md-4 col-md-2">
@@ -24,9 +24,9 @@
             </div>
 
             <div class="row espaco">
-                <div class="col-md-12" style="margin-top: 30px">
+                <div class="col-md-8" style="margin-top: 30px">
                     <div class="form-group">
-                    <table class="table table-hover" style="margin-left:-65px;">
+                    <table class="table table-hover" style="margin-left:130px;">
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col" width="120px">Nome</th>

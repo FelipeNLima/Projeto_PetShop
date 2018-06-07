@@ -40,7 +40,7 @@
                         <label>Dono:</label>
                         <select name="dono" id="dono" class="form-control">
                             <?php foreach($objCliente->CarregarCliente() as $rst) { ?>
-                                <option value="<?=$rst['id_cliente']?>"><?=$rst['Nome_cliente']?></option>
+                                <option value="<?=$rst['id_cliente']?>" required><?=$rst['Nome_cliente']?></option>
                             <?php } ?>
                         </select>
                     </div>

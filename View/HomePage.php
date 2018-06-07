@@ -1,6 +1,5 @@
-<?php include_once("Topo.php"); ?>
+<?php include("Topo.php"); 
+    include "../Conexao.php"
+?>
 
-<p>Ola mundo</p>
-
-
-<?php include_once("Fim.php"); ?>
+<?php include("Fim.php"); ?>

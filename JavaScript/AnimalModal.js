@@ -12,7 +12,7 @@ function ModalEditarAnimal()
         var recipient15 = button.data('g') 
         var modal = $(this)
         modal.find('#id').val(recipientId);
-        modal.find('#nomeanimal').val(recipient0);
+        modal.find('#nome').val(recipient0);
         modal.find('#raca').val(recipient11);
         modal.find('#especie').val(recipient12);
         modal.find('#data').val(recipient13);

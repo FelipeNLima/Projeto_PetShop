@@ -16,9 +16,9 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-4">
-                                <input type="hidden" class="form-control" name="id" id="id"/>
+                                <input type="hidden" class="form-control" required name="id" id="id"/>
                                 <label>Serviço:</label>
-                                <input type="text" class="form-control" name="descricao" id="descricao"/>
+                                <input type="text" class="form-control" required name="descricao" id="descricao"/>
                             </div>
                             <div class="col-md-4">
                                 <label>Preço:</label>
