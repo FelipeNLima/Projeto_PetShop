@@ -17,7 +17,6 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <input type="hidden" class="form-control" name="id" id="id"/>
-                                
                                 <label>Nome:</label>
                                 <input type="text" class="form-control" name="nomeanimal" id="nomeanimal"/>
                             </div>

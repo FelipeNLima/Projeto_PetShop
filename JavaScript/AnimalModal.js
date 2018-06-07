@@ -1,15 +1,15 @@
-function ModalEditAnimal()
+function ModalEditarAnimal()
 {
 
     $('#AtualizarAnimal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget)
-        var recipientId = button.data('whateverId') 
-        var recipient0 = button.data('whatever0')
-        var recipient11 = button.data('whatever11') 
-        var recipient12 = button.data('whatever12') 
-        var recipient13 = button.data('whatever13') 
-        var recipient14 = button.data('whatever14') 
-        var recipient15 = button.data('whatever15') 
+        var recipientId = button.data('a') 
+        var recipient0 = button.data('b')
+        var recipient11 = button.data('c') 
+        var recipient12 = button.data('d') 
+        var recipient13 = button.data('e') 
+        var recipient14 = button.data('f') 
+        var recipient15 = button.data('g') 
         var modal = $(this)
         modal.find('#id').val(recipientId);
         modal.find('#nomeanimal').val(recipient0);
@@ -18,6 +18,7 @@ function ModalEditAnimal()
         modal.find('#data').val(recipient13);
         modal.find('#sexo').val(recipient14);
         modal.find('#dono').val(recipient15);
+
     });
 }
 
@@ -25,7 +26,7 @@ function ModalDeletarAnimal()
 {
     $('#DeletarAnimal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget)
-        var recipientid = button.data('whateverId')
+        var recipientid = button.data('whateverid')
         var modal = $(this)
         modal.find('#id').val(recipientid);
     });

@@ -3,7 +3,7 @@
 <?php 
     include 'AtualizarAnimal.php'; 
     include 'DeletarAnimal.php'; 
-    require_once '../Model/AnimalModel.php';
+    include '../Model/AnimalModel.php';
     $objAnimal = new Animal();
 ?>
 <html>
@@ -50,14 +50,14 @@
                                     <td><?=$item['dono']?></td> 
                                     
                                     <td>
-                                        <button class ="btn btn-sm btn-Warning Editar" onclick="ModalEditAnimal()" data-toggle="modal" data-target="#AtualizarAnimal"
-                                        data-whateverId="<?=$item['id_animal']?>" 
-                                        data-whatever0="<?=$item['Nome_animal']?>"
-                                        data-whatever11="<?=$item['Raca']?>"
-                                        data-whatever12="<?=$item['especie']?>"
-                                        data-whatever13="<?=$item['Data_Nascimento']?>"
-                                        data-whatever14="<?=$item['sexo']?>"
-                                        data-whatever15="<?=$item['dono']?>"
+                                        <button class ="btn btn-sm btn-Warning Editar" onclick="ModalEditarAnimal()" data-toggle="modal" data-target="#AtualizarAnimal"
+                                        data-a="<?=$item['id_animal']?>"
+                                        data-b="<?=$item['Nome_animal']?>"
+                                        data-c="<?=$item['Raca']?>"
+                                        data-d="<?=$item['especie']?>"
+                                        data-e="<?=$item['Data_Nascimento']?>"
+                                        data-f="<?=$item['sexo']?>"
+                                        data-g="<?=$item['dono']?>"
  
                                         style="margin-bottom:  8px;" >
                                             <i class="fas fa-pencil-alt" style="margin-right: 5px;"></i>
