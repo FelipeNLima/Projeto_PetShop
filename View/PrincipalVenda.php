@@ -1,5 +1,4 @@
 <?php 
-    include 'Topo.php'; 
     require_once '../Model/VendaModel.php';
     $objVenda = new Venda();
 
@@ -38,8 +37,8 @@
                             <?php foreach($objVenda->CarregarVenda() as $item){ ?>
                                 <tr>
                                     <td style="display:none"><?=$item['id_venda']?></td> 
-                                    <td><?=$item['valor_total']?></td> 
-                                    <td><?=$item['data_pagamento']?></td> 
+                                    <td><?=$item['data_pagamento']?></td>
+                                    <td><?=$item['valor_total']?></td>  
                                     <td><?=$item['pagamento']?></td> 
                                     <td><?=$item['servico']?></td>
                                     <td><?=$item['animal']?></td>  

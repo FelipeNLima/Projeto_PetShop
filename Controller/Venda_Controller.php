@@ -8,7 +8,7 @@ $objVenda = new Venda();
 if(isset($_POST['btcadastrar']))
 
 {   
-    if($objCliente->CadastrarVenda($_POST) === 'ok')
+    if($objVenda->CadastrarVenda($_POST) === 'ok')
     {
         header("location: ..\View\PrincipalVenda.php");
     }

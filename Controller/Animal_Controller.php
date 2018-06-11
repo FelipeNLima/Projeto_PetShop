@@ -37,6 +37,16 @@ if(isset($_POST['btdeletar'])){
     {   
       echo '<script type="text/javascript">alert("Erro ao Deletar Animal");</script>';
     }
+
+    if(isset($_POST['filtro'])){
+        if($objAnimal->CarregarAnimalPorNome($_POST))
+        {
+                    
+        }
+        else
+        {   
+          echo '<script type="text/javascript">alert("Erro ao Deletar Animal");</script>';
+        }
 }
 
 ?>

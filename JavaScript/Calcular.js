@@ -12,3 +12,5 @@ $("#quantidade, #preco").change(function(){
 $(document).ready(function() {
     calcular();
 });
+
+

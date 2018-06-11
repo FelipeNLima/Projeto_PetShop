@@ -1,5 +1,3 @@
-<?php include_once("Topo.php"); ?>
-
 <?php
     require_once '../Model/ClienteModel.php';
     $objCliente = new Cliente();

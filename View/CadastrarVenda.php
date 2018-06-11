@@ -1,4 +1,3 @@
-<?php include_once("Topo.php"); ?>
 <?php
     require_once '../Model/ClienteModel.php';
     require_once '../Model/AnimalModel.php';
@@ -11,6 +10,7 @@
     $objPagamento = new Pagamento();
 ?>
 <html>
+
 <div class="offset-md-1 col-md-8" style="margin-top: 30px !important">
     <h3>Realizar Venda</h3>
     <hr />

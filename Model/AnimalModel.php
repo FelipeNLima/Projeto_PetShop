@@ -142,6 +142,27 @@ class Animal
             return 'error' .$ex->getMessage();
         }
     }
+
+    public function CarregarAnimalPorCliente($dados)
+    {
+        try{
+            $pdo = Conexao::conectar();
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = ("   SELECT id_animal, Nome_animal,  cliente.Nome_Cliente 
+                        FROM animal 
+                        INNER JOIN cliente ON animal.id_cliente = cliente.id_cliente
+                        WHERE cliente.Nome_Cliente LIKE %$dados%");
+
+            $query = $pdo->prepare($sql);
+            $query->execute();
+
+            return $query->fetchAll();
+
+        } catch (PDOException $ex) {
+            return 'error' .$ex->getMessage();
+        }
+    }
 }
 
 ?>

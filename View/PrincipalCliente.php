@@ -1,5 +1,4 @@
 <?php 
-    include 'Topo.php'; 
     include 'AtualizarCliente.php'; 
     include 'DeletarCliente.php';
     require_once '../Model/ClienteModel.php';
