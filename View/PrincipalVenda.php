@@ -12,7 +12,7 @@
                 </form>
                 </div>
                 <div class="offset-md-4 col-md-2">
-                    <a href="CadastrarVenda.php" class = "btn btn-primary preeche">
+                    <a href="TelaVenda.php" class = "btn btn-primary preeche">
                         <i class="fas fa-plus" style="margin-right: 5px;"></i>
                         Venda
                     </a>

@@ -158,11 +158,11 @@ class Cliente
     public function CarregarClientePorID($dados)
     {
         try{
-            $this->id_cliente = (int)$dados['id_cliente'];
+            $this->id_cliente = (int)$dados['cliente'];
             $pdo = Conexao::conectar();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $sql=("SELECT id_cliente, Nome_cliente, Bairro, Endereco, Numero, Cidade, Estado, CEP, CPF, Telefone, Celular, Email FROM cliente WHERE id_cliente = :IDCLIENTE");
+            $sql=("SELECT Nome_cliente FROM cliente WHERE id_cliente = :IDCLIENTE");
             $query = $pdo->prepare($sql);
             $query->bindParam(":IDCLIENTE", $this->id_cliente, PDO::PARAM_INT);
             $query->execute();

@@ -145,18 +145,20 @@ class Animal
 
     public function CarregarAnimalPorCliente($dados)
     {
+        
         try{
+            $this->id_cliente = (int) $dados['cliente'];
             $pdo = Conexao::conectar();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $sql = ("   SELECT id_animal, Nome_animal,  cliente.Nome_Cliente 
+            $sql = ("   SELECT id_animal, Nome_animal,  cliente.id_cliente 
                         FROM animal 
                         INNER JOIN cliente ON animal.id_cliente = cliente.id_cliente
-                        WHERE cliente.Nome_Cliente LIKE %$dados%");
+                        WHERE cliente.id_cliente = :IDCLIENTE");
 
             $query = $pdo->prepare($sql);
+            $query->bindParam(":IDCLIENTE", $this->id_cliente, PDO::PARAM_INT);
             $query->execute();
-
             return $query->fetchAll();
 
         } catch (PDOException $ex) {

@@ -8,6 +8,7 @@
     $objAnimal = new Animal();
     $objServico = new Servico();
     $objPagamento = new Pagamento();
+    $id = $_GET['cliente'];
 ?>
 <html>
 
@@ -23,16 +24,16 @@
                 <div class="row">
                     <div class="col-md-8">
                         <label>Cliente:</label>
-                        <select name="cliente" id="cliente" class="form-control">
-                            <?php foreach($objCliente->CarregarCliente() as $rst) { ?>
-                                <option value="<?=$rst['id_cliente']?>" required><?=$rst['Nome_cliente']?></option>
+                        <select name="cliente" id="cliente" class="form-control" readonly="readonly">
+                            <?php foreach($objCliente->CarregarClientePorID($id) as $rst) { ?>
+                                <option value="<?=$rst['id_cliente']?>"><?=$rst['Nome_cliente']?></option>
                             <?php } ?>
                         </select>
                     </div>
                     <div class="col-md-8">
                         <label>Animal:</label>
                         <select name="animal" id="animal" class="form-control">
-                            <?php foreach($objAnimal->CarregarAnimal() as $rst) { ?>
+                            <?php foreach($objAnimal->CarregarAnimalPorCliente($id) as $rst) { ?>
                                 <option value="<?=$rst['id_animal']?>" required><?=$rst['Nome_animal']?></option>
                             <?php } ?>
                         </select>
@@ -77,7 +78,7 @@
                     </div>
                     <div class="col-md-6">
                         <label>Data:</label>
-                        <input class="form-control" required name="data" id="data" type="text" value="<?=date('d/m/Y')?>">
+                        <input class="form-control" required name="data" id="data" type="text" value="<?=date("d/m/Y H:i:s")?>">
                     </div>
 
                     <div class="col-md-8">
@@ -93,6 +94,6 @@
 </form>
 </html>
 
-
+<script type="text/javascript" src="../JavaScript/Filtrar.js"></script>
 <script type="text/javascript" src="../JavaScript/Calcular.js"></script>
 <?php include_once("Fim.php"); ?>
